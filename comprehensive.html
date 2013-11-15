@@ -305,15 +305,135 @@
                                     </select>
 									</div>
                                 </div>
-                
+			
+
+
 								 <div id="extend-div" align = "right" style="padding-top:100px; padding-right:20px; float:right;"></div>
 							
 								<!</div>
 								<!<div class ="span4">
-								<div id="container" style="padding-left:50px; padding-bottom:30px; float:left;"></div>
-								<!</div>
+								<div id="container" style="position:relative; padding-left:50px; padding-bottom:30px; float:left;">
+								<div id="room-one-label" style="position:absolute; padding-left:-10px; top:50px; ">Room 1</div>
+								<div id="room-two-label" style="position:absolute; padding-left:50px;  top:50px;">Room 2</div>
+								<div id="room-three-label" style="position:absolute; padding-left:-10px; top:75px;">Room 3</div>
+								<div id="room-four-label" style="position:absolute; padding-left:50px; top:75px;">Room 4</div>
+								</div>
+								
+								
+
+					<div id="room_percentage" style="display:none">
+					<div style="padding-left: 40px; float: left;">
+
+					<h5>Room 1</h5>
+    				<h6>Function</h6>
+	    			  <select value="this.value" class="span3" id="activity_type" name="activity_type">
+         			    <option value="SmallOffice">Small Office</option>
+	        			 <option value="MediumOffice">Medium Office</option>
+				         <option value="LargeOffice">Large Office</option>
+			             <option value="Warehouse">Warehouse (non-refrigerated)</option>
+			             <option value="Retail">Core-Retail</option>
+			             <option disabled>Stand-alone Retail</option>
+			             <option disabled>Strip Mall</option>
+			             <option disabled>Primary School</option>
+			             <option disabled>Secondary School</option>
+			             <option disabled>Outpatient Healthcare</option>
+			             <option disabled>Hospital</option>
+      			  		 <option disabled>Small hotel</option>
+			             <option disabled>Large Hotel</option>
+           				  <option disabled>Quick Service Restaurant</option>
+			             <option disabled>Full Service Restaurant</option>
+            			 <option disabled>Mid-Rise Apartment</option>
+			             <option disabled>High-Rise Apartment</option>
+        				 </select>
+					<p>Percentage</p>
+       				<p id="room-one-percentage"></p>
+
+
+					<h5>Room 3</h5>
+    				<h6>Function</h6>
+	    			  <select value="this.value" class="span3" id="activity_type" name="activity_type">
+         			    <option value="SmallOffice">Small Office</option>
+	        			 <option value="MediumOffice">Medium Office</option>
+				         <option value="LargeOffice">Large Office</option>
+			             <option value="Warehouse">Warehouse (non-refrigerated)</option>
+			             <option value="Retail">Core-Retail</option>
+			             <option disabled>Stand-alone Retail</option>
+			             <option disabled>Strip Mall</option>
+			             <option disabled>Primary School</option>
+			             <option disabled>Secondary School</option>
+			             <option disabled>Outpatient Healthcare</option>
+			             <option disabled>Hospital</option>
+      			  		 <option disabled>Small hotel</option>
+			             <option disabled>Large Hotel</option>
+           				  <option disabled>Quick Service Restaurant</option>
+			             <option disabled>Full Service Restaurant</option>
+            			 <option disabled>Mid-Rise Apartment</option>
+			             <option disabled>High-Rise Apartment</option>
+        				 </select>
+					<p>Percentage</p>
+       				<p id="room-three-percentage"></p>
+					
+
+					
+					</div>
+					<div style="padding-left: 40px; float: right;">
+
+
+				<h5>Room 2</h5>
+    				<h6>Function</h6>
+	    			  <select value="this.value" class="span3" id="activity_type" name="activity_type">
+         			    <option value="SmallOffice">Small Office</option>
+	        			 <option value="MediumOffice">Medium Office</option>
+				         <option value="LargeOffice">Large Office</option>
+			             <option value="Warehouse">Warehouse (non-refrigerated)</option>
+			             <option value="Retail">Core-Retail</option>
+			             <option disabled>Stand-alone Retail</option>
+			             <option disabled>Strip Mall</option>
+			             <option disabled>Primary School</option>
+			             <option disabled>Secondary School</option>
+			             <option disabled>Outpatient Healthcare</option>
+			             <option disabled>Hospital</option>
+      			  		 <option disabled>Small hotel</option>
+			             <option disabled>Large Hotel</option>
+           				  <option disabled>Quick Service Restaurant</option>
+			             <option disabled>Full Service Restaurant</option>
+            			 <option disabled>Mid-Rise Apartment</option>
+			             <option disabled>High-Rise Apartment</option>
+        				 </select>
+					<p>Percentage</p>
+       				<p id="room-two-percentage"></p>
+				
+					<h5>Room 4</h5>
+    				<h6>Function</h6>
+	    			  <select value="this.value" class="span3" id="activity_type" name="activity_type">
+         			    <option value="SmallOffice">Small Office</option>
+	        			 <option value="MediumOffice">Medium Office</option>
+				         <option value="LargeOffice">Large Office</option>
+			             <option value="Warehouse">Warehouse (non-refrigerated)</option>
+			             <option value="Retail">Core-Retail</option>
+			             <option disabled>Stand-alone Retail</option>
+			             <option disabled>Strip Mall</option>
+			             <option disabled>Primary School</option>
+			             <option disabled>Secondary School</option>
+			             <option disabled>Outpatient Healthcare</option>
+			             <option disabled>Hospital</option>
+      			  		 <option disabled>Small hotel</option>
+			             <option disabled>Large Hotel</option>
+           				  <option disabled>Quick Service Restaurant</option>
+			             <option disabled>Full Service Restaurant</option>
+            			 <option disabled>Mid-Rise Apartment</option>
+			             <option disabled>High-Rise Apartment</option>
+        				 </select>
+					<p>Percentage</p>
+       				<p id="room-four-percentage"></p> 
+					</div>
+
+					</div>
                             
                         </div>
+
+
+
                     </section>
                     
                     <!-- ####################################### Architecture Seciton 2 ################################################## -->
@@ -1184,17 +1304,17 @@ function initDynamicShape()
         strokeWidth: '6',
         draggable: true,
 		dragBoundFunc: function(pos) {
-			if(pos.x < -100)						// lower bound
+			if(pos.x < -144)						// lower bound
 			{
 				return{
-				x: -100,
+				x: -144,
 				y: this.getAbsolutePosition().y				
 				}
 			}
-			if(pos.x > 205)							// upper bound
+			if(pos.x > 146)							// upper bound
 			{
 				return{
-				x: 205,
+				x: 146,
 				y: this.getAbsolutePosition().y				
 				}
 			}
@@ -1214,19 +1334,18 @@ function initDynamicShape()
         strokeWidth: '6',
         draggable: true,
 		dragBoundFunc: function(pos) {
-			//roomOnePercentage();
-			if(pos.y < 20)							// lower bound
+			if(pos.y < -69)							// lower bound
 			{
 				return{
 				x: this.getAbsolutePosition().x,
-				y: 20			
+				y: -69			
 				}
 			}
-			if(pos.y > 120)							// upper bound
+			if(pos.y > 71)							// upper bound
 			{
 				return{
 				x: this.getAbsolutePosition().x,
-				y: 120		
+				y: 71		
 				}
 			}	
           return {
@@ -1235,6 +1354,29 @@ function initDynamicShape()
           }
         }
       });
+
+
+	xLine.on('dragmove', function() {				// update percentages when x line is dragged
+        roomPercentage();
+        console.log('dragsx');
+      });
+      yLine.on('dragmove', function() {				// update percentages when y line is dragged
+        roomPercentage();
+        console.log('dragy');
+      });
+
+
+	xLine.on('dragend', function() {				// update percentages when x line is dragged
+        roomPercentage();
+        console.log(this.getAbsolutePosition().y);
+      });
+      yLine.on('dragend', function() {				// update percentages when y line is dragged
+        roomPercentage();
+        console.log(this.getAbsolutePosition().x);
+      })
+
+
+
 
 
       layer.add(blackLine0);
@@ -1264,49 +1406,42 @@ function roomPercentage()
 
 	// room 1
 	var width = yLine.getPosition().x;
-	width += 200;
+	width += 144;
 	var height = xLine.getPosition().y;
-	height += 25;
+	height += 69;
 	
-	var percentage = ((width*height)/100000)*100;
+	var percentage = ((width*height)/40890)*100;
 	percentage = percentage.toFixed(2);
 	
 	$("#room-one-percentage").html(percentage + " %");
 	
 	// room 2
-	width = 500 - width;
+	width = 290 - width;
 
-	percentage = ((width*height)/100000)*100;
+	percentage = ((width*height)/40890)*100;
 	percentage = percentage.toFixed(2);
 	
 	$("#room-two-percentage").html(percentage + " %");
 	
 	// room 4
-	height = 200 - height;
+	height = 141 - height;
 	
-	percentage = ((width*height)/100000)*100;
+	percentage = ((width*height)/40890)*100;
 	percentage = percentage.toFixed(2);
 	
 	$("#room-four-percentage").html(percentage + " %");
 	
 	// room 3
 	width = yLine.getPosition().x;
-	width += 200;
+	width += 144;
 	
-	percentage = ((width*height)/100000)*100;
+	percentage = ((width*height)/40890)*100;
 	percentage = percentage.toFixed(2);
 	
 	$("#room-three-percentage").html(percentage + " %");
 	
 }
-	xLine.on('dragmove', function() {				// update percentages when x line is dragged
-        roomPercentage();
-        //console.log('dragstart');
-      });
-      yLine.on('dragmove', function() {				// update percentages when y line is dragged
-        roomPercentage();
-        //console.log('dragend');
-      });
+	
 
 
 
@@ -1315,6 +1450,8 @@ function drawDynamicShape(answer)
 {
 	 initDynamicShape();
 	 document.getElementById('extend-div').style.display = 'block';
+	//document.getElementById('room-one-label').style.display = 'block';     
+	//$("#room-one-label").show();
 
     // blackLine0.show();
 	 //blackLine1.show();
@@ -1326,18 +1463,24 @@ function drawDynamicShape(answer)
 	  xLine.show();
 	  yLine.show();
 	  layer.draw();
+	  document.getElementById('room_percentage').style.display = 'block';
+	  roomPercentage();
 	}
 	else if(answer == "No")
 	{
 		xLine.hide();
 		yLine.hide();
 		layer.draw();
+		document.getElementById('room_percentage').style.display = 'none';
+		//$("#container").children().show();
 	}
 	else if(answer == "0")
 	{
 		hideDynamicShape();
+		//$("#container").children().hide();
 		document.getElementById('container').style.display = 'none';
 		document.getElementById('extend-div').style.display = 'none';
+	    document.getElementById('room_percentage').style.display = 'none';
 	}
 
 	//document.getElementById('extend_inputs').style.display = 'block';
@@ -1347,6 +1490,7 @@ function drawDynamicShape(answer)
 function hideDynamicShape()
 {
 	 //$( "div" ).remove(".container");
+	document.getElementById('room_percentage').style.display = 'none';
 	if(layer != null)
 {
 	layer.remove();
