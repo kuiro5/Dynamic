@@ -312,12 +312,7 @@
 							
 								<!</div>
 								<!<div class ="span4">
-								<div id="container" style="position:relative; padding-left:50px; padding-bottom:30px; float:left;">
-								<div id="room-one-label" style="position:absolute; padding-left:-10px; top:50px; ">Room 1</div>
-								<div id="room-two-label" style="position:absolute; padding-left:50px;  top:50px;">Room 2</div>
-								<div id="room-three-label" style="position:absolute; padding-left:-10px; top:75px;">Room 3</div>
-								<div id="room-four-label" style="position:absolute; padding-left:50px; top:75px;">Room 4</div>
-								</div>
+								<div id="container" style="position:relative; padding-left:50px; padding-bottom:30px; float:left;"></div>
 								
 								
 
@@ -960,10 +955,8 @@
         			                ' <div class="controls"> <input type="number" min="1" name="degree" id="degree" placeholder="degree"> </div> </div>' ;
         		break;
         		default:
-        			extend_inputs = '';
-					hideDynamicShape();
-					$('#room_question').hide();
-        			$('#extend-div').html(extend_inputs);
+    			extend_inputs = '';
+					img_src='';
         			return 0;
         		break;
         		}
@@ -975,6 +968,13 @@
 					console.log('inside if!');
         			$('#extend-div').html(extend_inputs);
 					document.getElementById('extend-div').style.display = 'none';
+				}
+				else if(shape == "")
+				{
+					hideDynamicShape();
+					$('#room_question').hide();
+					
+        			$('#extend-div').html(extend_inputs);
 				}
 				else
 				{
@@ -1247,6 +1247,10 @@ var blackLine2;
 var blackLine3;
 var xLine;
 var yLine;
+var roomOneText;
+var roomTwoText;
+var roomThreeText;
+var roomFourText;
 
 function initDynamicShape()
 {
@@ -1262,7 +1266,66 @@ function initDynamicShape()
 
       layer = new Kinetic.Layer();
 	
-//}
+
+     var lengthText = new Kinetic.Text({
+        x: 135,
+        y: 32,
+        text: 'length',
+        fontSize: 11,
+        fontFamily: 'Helvetica',
+        fill: 'blue'
+      });
+
+	  var widthText = new Kinetic.Text({
+        x: 315,
+        y: 115,
+        text: 'width',
+        fontSize: 11,
+        fontFamily: 'Helvetica',
+        fill: 'blue'
+      });
+
+
+		roomOneText = new Kinetic.Text({
+        x: 30,
+        y: 75,
+        text: 'Room 1',
+        fontSize: 11,
+        fontFamily: 'Helvetica',
+        fill: 'blue'
+      });
+
+	  roomTwoText = new Kinetic.Text({
+        x: 225,
+        y: 75,
+        text: 'Room 2',
+        fontSize: 11,
+        fontFamily: 'Helvetica',
+        fill: 'blue'
+      });
+
+	  roomThreeText = new Kinetic.Text({
+        x: 30,
+        y: 175,
+        text: 'Room 3',
+        fontSize: 11,
+        fontFamily: 'Helvetica',
+        fill: 'blue'
+      });
+
+	  roomFourText = new Kinetic.Text({
+        x: 225,
+        y: 175,
+        text: 'Room 4',
+        fontSize: 11,
+        fontFamily: 'Helvetica',
+        fill: 'blue'
+      });
+
+		
+
+	  widthText.rotate(Math.PI/2);
+
 
       // complex dashed and dotted line
       blackLine0 = new Kinetic.Line({
@@ -1304,17 +1367,17 @@ function initDynamicShape()
         strokeWidth: '6',
         draggable: true,
 		dragBoundFunc: function(pos) {
-			if(pos.x < -144)						// lower bound
+			if(pos.x < -77)						// lower bound
 			{
 				return{
-				x: -144,
+				x: -77,
 				y: this.getAbsolutePosition().y				
 				}
 			}
-			if(pos.x > 146)							// upper bound
+			if(pos.x > 71)							// upper bound
 			{
 				return{
-				x: 146,
+				x: 71,
 				y: this.getAbsolutePosition().y				
 				}
 			}
@@ -1329,16 +1392,16 @@ function initDynamicShape()
 
 	  xLine = new Kinetic.Line({
         y: 50,
-        points: [2, 125, 300, 125],
+        points: [2, 100, 300, 100],
         stroke: 'black',
         strokeWidth: '6',
         draggable: true,
 		dragBoundFunc: function(pos) {
-			if(pos.y < -69)							// lower bound
+			if(pos.y < -9)							// lower bound
 			{
 				return{
 				x: this.getAbsolutePosition().x,
-				y: -69			
+				y: -9			
 				}
 			}
 			if(pos.y > 71)							// upper bound
@@ -1377,7 +1440,14 @@ function initDynamicShape()
 
 
 
+	layer.add(lengthText);
+	layer.add(widthText);
 
+	  layer.add(roomOneText);
+	layer.add(roomTwoText);
+
+	  layer.add(roomThreeText);
+	layer.add(roomFourText);
 
       layer.add(blackLine0);
 	  layer.add(blackLine1);
@@ -1462,6 +1532,10 @@ function drawDynamicShape(answer)
 	{
 	  xLine.show();
 	  yLine.show();
+	  roomOneText.show();
+	  roomTwoText.show();
+	  roomThreeText.show();
+	  roomFourText.show();
 	  layer.draw();
 	  document.getElementById('room_percentage').style.display = 'block';
 	  roomPercentage();
@@ -1470,6 +1544,10 @@ function drawDynamicShape(answer)
 	{
 		xLine.hide();
 		yLine.hide();
+	    roomOneText.hide();
+	    roomTwoText.hide();
+	    roomThreeText.hide();
+	    roomFourText.hide();
 		layer.draw();
 		document.getElementById('room_percentage').style.display = 'none';
 		//$("#container").children().show();
