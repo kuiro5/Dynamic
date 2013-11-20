@@ -279,6 +279,8 @@
                                     </h2>
                                 </div>
                             </div>
+
+							<!-- ################################## Dynamic Rectangle ############################################## -->
                             <div class="row">
                                 <div class="span4" >
                                     <h4>Shape</h4>
@@ -293,8 +295,6 @@
                                         <option value="Polygon" disabled>Geometry From Import</option>
                                     </select>
                                 </div>
-								<!<div class="span3">
-			
 								<div class="span4" >
 									<div id ="room_question" style="display:none">
                                     <h4>Multi-Purpose Rooms?</h4>
@@ -305,130 +305,109 @@
                                     </select>
 									</div>
                                 </div>
-			
-
-
-								 <div id="extend-div" align = "right" style="padding-top:100px; padding-right:20px; float:right;"></div>
-							
-								<!</div>
-								<!<div class ="span4">
+								<div id="extend-div" align = "right" style="padding-top:100px; padding-right:20px; float:right;"></div>
 								<div id="container" style="position:relative; padding-left:50px; padding-bottom:30px; float:left;"></div>
 								
-								
+								<div id="room_percentage" style="display:none" style="padding-left: 40px; float: left;">
+									<h5>Room 1</h5>
+    								<h6>Function</h6>
+    			  						<select value="this.value" class="span3" id="activity_type" name="activity_type">
+			         						<option value="SmallOffice">Small Office</option>
+		 									<option value="MediumOffice">Medium Office</option>
+				               				<option value="LargeOffice">Large Office</option>
+								            <option value="Warehouse">Warehouse (non-refrigerated)</option>
+			         						<option value="Retail">Core-Retail</option>
+			         						<option disabled>Stand-alone Retail</option>
+			         						<option disabled>Strip Mall</option>
+			         						<option disabled>Primary School</option>
+			         						<option disabled>Secondary School</option>
+			         						<option disabled>Outpatient Healthcare</option>
+			         						<option disabled>Hospital</option>
+			         						<option disabled>Small hotel</option>
+			         						<option disabled>Large Hotel</option>
+			         						<option disabled>Quick Service Restaurant</option>
+			         						<option disabled>Full Service Restaurant</option>
+			         						<option disabled>Mid-Rise Apartment</option>
+			         						<option disabled>High-Rise Apartment</option>
+        						 		</select>
+									<p>Percentage</p>
+       								<p id="room-one-percentage"></p>
 
-					<div id="room_percentage" style="display:none">
-					<div style="padding-left: 40px; float: left;">
-
-					<h5>Room 1</h5>
-    				<h6>Function</h6>
-	    			  <select value="this.value" class="span3" id="activity_type" name="activity_type">
-         			    <option value="SmallOffice">Small Office</option>
-	        			 <option value="MediumOffice">Medium Office</option>
-				         <option value="LargeOffice">Large Office</option>
-			             <option value="Warehouse">Warehouse (non-refrigerated)</option>
-			             <option value="Retail">Core-Retail</option>
-			             <option disabled>Stand-alone Retail</option>
-			             <option disabled>Strip Mall</option>
-			             <option disabled>Primary School</option>
-			             <option disabled>Secondary School</option>
-			             <option disabled>Outpatient Healthcare</option>
-			             <option disabled>Hospital</option>
-      			  		 <option disabled>Small hotel</option>
-			             <option disabled>Large Hotel</option>
-           				  <option disabled>Quick Service Restaurant</option>
-			             <option disabled>Full Service Restaurant</option>
-            			 <option disabled>Mid-Rise Apartment</option>
-			             <option disabled>High-Rise Apartment</option>
-        				 </select>
-					<p>Percentage</p>
-       				<p id="room-one-percentage"></p>
-
-
-					<h5>Room 3</h5>
-    				<h6>Function</h6>
-	    			  <select value="this.value" class="span3" id="activity_type" name="activity_type">
-         			    <option value="SmallOffice">Small Office</option>
-	        			 <option value="MediumOffice">Medium Office</option>
-				         <option value="LargeOffice">Large Office</option>
-			             <option value="Warehouse">Warehouse (non-refrigerated)</option>
-			             <option value="Retail">Core-Retail</option>
-			             <option disabled>Stand-alone Retail</option>
-			             <option disabled>Strip Mall</option>
-			             <option disabled>Primary School</option>
-			             <option disabled>Secondary School</option>
-			             <option disabled>Outpatient Healthcare</option>
-			             <option disabled>Hospital</option>
-      			  		 <option disabled>Small hotel</option>
-			             <option disabled>Large Hotel</option>
-           				  <option disabled>Quick Service Restaurant</option>
-			             <option disabled>Full Service Restaurant</option>
-            			 <option disabled>Mid-Rise Apartment</option>
-			             <option disabled>High-Rise Apartment</option>
-        				 </select>
-					<p>Percentage</p>
-       				<p id="room-three-percentage"></p>
-					
-
-					
-					</div>
-					<div style="padding-left: 40px; float: right;">
-
-
-				<h5>Room 2</h5>
-    				<h6>Function</h6>
-	    			  <select value="this.value" class="span3" id="activity_type" name="activity_type">
-         			    <option value="SmallOffice">Small Office</option>
-	        			 <option value="MediumOffice">Medium Office</option>
-				         <option value="LargeOffice">Large Office</option>
-			             <option value="Warehouse">Warehouse (non-refrigerated)</option>
-			             <option value="Retail">Core-Retail</option>
-			             <option disabled>Stand-alone Retail</option>
-			             <option disabled>Strip Mall</option>
-			             <option disabled>Primary School</option>
-			             <option disabled>Secondary School</option>
-			             <option disabled>Outpatient Healthcare</option>
-			             <option disabled>Hospital</option>
-      			  		 <option disabled>Small hotel</option>
-			             <option disabled>Large Hotel</option>
-           				  <option disabled>Quick Service Restaurant</option>
-			             <option disabled>Full Service Restaurant</option>
-            			 <option disabled>Mid-Rise Apartment</option>
-			             <option disabled>High-Rise Apartment</option>
-        				 </select>
-					<p>Percentage</p>
-       				<p id="room-two-percentage"></p>
+									<h5>Room 3</h5>
+    								<h6>Function</h6>
+	    						 		<select value="this.value" class="span3" id="activity_type" name="activity_type">
+         			     					<option value="SmallOffice">Small Office</option>
+	        			 					<option value="MediumOffice">Medium Office</option>
+								         	<option value="LargeOffice">Large Office</option>
+			             					<option value="Warehouse">Warehouse (non-refrigerated)</option>
+			            					<option value="Retail">Core-Retail</option>
+			            					<option disabled>Stand-alone Retail</option>
+			           						<option disabled>Strip Mall</option>
+			      						    <option disabled>Primary School</option>
+			      							<option disabled>Secondary School</option>
+			      							<option disabled>Outpatient Healthcare</option>
+			      							<option disabled>Hospital</option>
+			      							<option disabled>Small hotel</option>
+			      							<option disabled>Large Hotel</option>
+			      							<option disabled>Quick Service Restaurant</option>
+			      							<option disabled>Full Service Restaurant</option>
+			      							<option disabled>Mid-Rise Apartment</option>
+			      							<option disabled>High-Rise Apartment</option>
+	    						 		</select>
+									<p>Percentage</p>
+									<p id="room-three-percentage"></p>					
+								</div>
+								<div style="padding-left: 40px; float: right;">
+									<h5>Room 2</h5>
+									<h6>Function</h6>
+	    						 		<select value="this.value" class="span3" id="activity_type" name="activity_type">
+         			     					<option value="SmallOffice">Small Office</option>
+         			     					<option value="MediumOffice">Medium Office</option>
+         			     					<option value="LargeOffice">Large Office</option>
+         			     					<option value="Warehouse">Warehouse (non-refrigerated)</option>
+         			     					<option value="Retail">Core-Retail</option>
+         			     					<option disabled>Stand-alone Retail</option>
+         			     					<option disabled>Strip Mall</option>
+         			     					<option disabled>Primary School</option>
+         			     					<option disabled>Secondary School</option>
+         			     					<option disabled>Outpatient Healthcare</option>
+         			     					<option disabled>Hospital</option>
+         			     					<option disabled>Small hotel</option>
+         			     					<option disabled>Large Hotel</option>
+         			     					<option disabled>Quick Service Restaurant</option>
+         			     					<option disabled>Full Service Restaurant</option>
+         			     					<option disabled>Mid-Rise Apartment</option>
+         			     					<option disabled>High-Rise Apartment</option>
+	    						 		</select>
+									<p>Percentage</p>
+									<p id="room-two-percentage"></p>
 				
-					<h5>Room 4</h5>
-    				<h6>Function</h6>
-	    			  <select value="this.value" class="span3" id="activity_type" name="activity_type">
-         			    <option value="SmallOffice">Small Office</option>
-	        			 <option value="MediumOffice">Medium Office</option>
-				         <option value="LargeOffice">Large Office</option>
-			             <option value="Warehouse">Warehouse (non-refrigerated)</option>
-			             <option value="Retail">Core-Retail</option>
-			             <option disabled>Stand-alone Retail</option>
-			             <option disabled>Strip Mall</option>
-			             <option disabled>Primary School</option>
-			             <option disabled>Secondary School</option>
-			             <option disabled>Outpatient Healthcare</option>
-			             <option disabled>Hospital</option>
-      			  		 <option disabled>Small hotel</option>
-			             <option disabled>Large Hotel</option>
-           				  <option disabled>Quick Service Restaurant</option>
-			             <option disabled>Full Service Restaurant</option>
-            			 <option disabled>Mid-Rise Apartment</option>
-			             <option disabled>High-Rise Apartment</option>
-        				 </select>
-					<p>Percentage</p>
-       				<p id="room-four-percentage"></p> 
-					</div>
-
-					</div>
-                            
+									<h5>Room 4</h5>
+									<h6>Function</h6>
+	    						 		<select value="this.value" class="span3" id="activity_type" name="activity_type">
+         			     					<option value="SmallOffice">Small Office</option>
+         			     					<option value="MediumOffice">Medium Office</option>
+         			     					<option value="LargeOffice">Large Office</option>
+         			     					<option value="Warehouse">Warehouse (non-refrigerated)</option>
+         			     					<option value="Retail">Core-Retail</option>
+         			     					<option disabled>Stand-alone Retail</option>
+         			     					<option disabled>Strip Mall</option>
+         			     					<option disabled>Primary School</option>
+         			     					<option disabled>Secondary School</option>
+         			     					<option disabled>Outpatient Healthcare</option>
+         			     					<option disabled>Hospital</option>
+         			     					<option disabled>Small hotel</option>
+         			     					<option disabled>Large Hotel</option>
+         			     					<option disabled>Quick Service Restaurant</option>
+         			     					<option disabled>Full Service Restaurant</option>
+         			     					<option disabled>Mid-Rise Apartment</option>
+         			     					<option disabled>High-Rise Apartment</option>
+	    						 		</select>
+									<p>Percentage</p>
+									<p id="room-four-percentage"></p> 
+								</div>
+								</div>               
                         </div>
-
-
-
                     </section>
                     
                     <!-- ####################################### Architecture Seciton 2 ################################################## -->
@@ -827,12 +806,10 @@
 
 			console.log("%d", document.getElementById("random_number").value);
 
-        	function changeShape(shape) {
+        	function changeShape(shape) 
+			{
         		var extend_inputs= '';                  // additional shape info
         		var img_scr = '';                       // image source for the shape
-				var dynamic_walls = '';
-				var dynamic = '';
-				//initDynamicshape();
         
         		switch(shape) {
         		case 'L':
@@ -927,8 +904,7 @@
         
         		case 'Rectangle':
         			img_scr = '';
-					//
-					$('#room_question').show();	
+					$('#room_question').show();								
 					document.getElementById('dynamic').selectedIndex = 0;
 					document.getElementById('container').style.display = 'none';
         			extend_inputs = ' <div class="control-group"> <label class="control-label" for="length">Length</label>' +
@@ -955,25 +931,21 @@
         			                ' <div class="controls"> <input type="number" min="1" name="degree" id="degree" placeholder="degree"> </div> </div>' ;
         		break;
         		default:
-    			extend_inputs = '';
+    				extend_inputs = '';
 					img_src='';
         			return 0;
         		break;
         		}
         		
-				// var img = '<img style="width: 500px;" src="./img/'+img_scr+'.png" class="img-rounded">';
-				// dynamic_walls = ' <div id="container"></div> ';
 				if(shape == "Rectangle")
 				{
-					console.log('inside if!');
         			$('#extend-div').html(extend_inputs);
-					document.getElementById('extend-div').style.display = 'none';
+					document.getElementById('extend-div').style.display = 'none';					// do not display unti user chooses dynamic walls
 				}
 				else if(shape == "")
 				{
 					hideDynamicShape();
 					$('#room_question').hide();
-					
         			$('#extend-div').html(extend_inputs);
 				}
 				else
@@ -1206,9 +1178,7 @@
             	            err_msg+="Architecture - Shape - Degree \n";
             	        }
             	    break;
-            	    
-            	    
-            	    
+
             	}
             	
             	if(roofMaterial ==""){
@@ -1478,7 +1448,7 @@ function roomPercentage()
 	var width = yLine.getPosition().x;
 	width += 144;
 	var height = xLine.getPosition().y;
-	height += 69;
+	height += 44;
 	
 	var percentage = ((width*height)/40890)*100;
 	percentage = percentage.toFixed(2);
@@ -1494,7 +1464,7 @@ function roomPercentage()
 	$("#room-two-percentage").html(percentage + " %");
 	
 	// room 4
-	height = 141 - height;
+	height = 140 - height;
 	
 	percentage = ((width*height)/40890)*100;
 	percentage = percentage.toFixed(2);
