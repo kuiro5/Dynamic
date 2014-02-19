@@ -305,10 +305,9 @@
                                     </select>
 									</div>
                                 </div>
-								<div id="extend-div" align = "right" style="padding-top:100px; padding-right:20px; float:right;"></div>
-								<div id="container" style="position:relative; padding-left:50px; padding-bottom:30px; float:left;"></div>
-								
-								<div id="room_percentage" style="display:none" style="padding-left: 40px; float: left;">
+                                <div id="container" style="position:relative; padding-left:50px; padding-bottom:30px; float:left;"></div>
+								<div id="extend-div" align = "right" style="padding-top:100px; padding-right:20px; float:right;"></div>					
+								<div id="room_percentage" style="display:none; float: left; margin-left: 5%;">
 									<h5>Room 1</h5>
     								<h6>Function</h6>
     			  						<select value="this.value" class="span3" id="activity_type" name="activity_type">
@@ -357,7 +356,7 @@
 									<p>Percentage</p>
 									<p id="room-three-percentage"></p>					
 								</div>
-								<div style="padding-left: 40px; float: right;">
+								<div id="room_percentage_two" style="display:none; float: right;">
 									<h5>Room 2</h5>
 									<h6>Function</h6>
 	    						 		<select value="this.value" class="span3" id="activity_type" name="activity_type">
@@ -1243,7 +1242,7 @@ function initDynamicShape()
         text: 'length',
         fontSize: 11,
         fontFamily: 'Helvetica',
-        fill: 'blue'
+        fill: 'dodgerblue'
       });
 
 	  var widthText = new Kinetic.Text({
@@ -1252,7 +1251,7 @@ function initDynamicShape()
         text: 'width',
         fontSize: 11,
         fontFamily: 'Helvetica',
-        fill: 'blue'
+        fill: 'dodgerblue'
       });
 
 
@@ -1262,7 +1261,7 @@ function initDynamicShape()
         text: 'Room 1',
         fontSize: 11,
         fontFamily: 'Helvetica',
-        fill: 'blue'
+        fill: 'dodgerblue'
       });
 
 	  roomTwoText = new Kinetic.Text({
@@ -1271,7 +1270,7 @@ function initDynamicShape()
         text: 'Room 2',
         fontSize: 11,
         fontFamily: 'Helvetica',
-        fill: 'blue'
+        fill: 'dodgerblue'
       });
 
 	  roomThreeText = new Kinetic.Text({
@@ -1280,7 +1279,7 @@ function initDynamicShape()
         text: 'Room 3',
         fontSize: 11,
         fontFamily: 'Helvetica',
-        fill: 'blue'
+        fill: 'dodgerblue'
       });
 
 	  roomFourText = new Kinetic.Text({
@@ -1289,7 +1288,7 @@ function initDynamicShape()
         text: 'Room 4',
         fontSize: 11,
         fontFamily: 'Helvetica',
-        fill: 'blue'
+        fill: 'dodgerblue'
       });
 
 		
@@ -1508,6 +1507,7 @@ function drawDynamicShape(answer)
 	  roomFourText.show();
 	  layer.draw();
 	  document.getElementById('room_percentage').style.display = 'block';
+	  document.getElementById('room_percentage_two').style.display = 'block';
 	  roomPercentage();
 	}
 	else if(answer == "No")
@@ -1520,6 +1520,7 @@ function drawDynamicShape(answer)
 	    roomFourText.hide();
 		layer.draw();
 		document.getElementById('room_percentage').style.display = 'none';
+		document.getElementById('room_percentage_two').style.display = 'none';
 		//$("#container").children().show();
 	}
 	else if(answer == "0")
@@ -1529,6 +1530,7 @@ function drawDynamicShape(answer)
 		document.getElementById('container').style.display = 'none';
 		document.getElementById('extend-div').style.display = 'none';
 	    document.getElementById('room_percentage').style.display = 'none';
+	    document.getElementById('room_percentage_two').style.display = 'nonefroom';
 	}
 
 	//document.getElementById('extend_inputs').style.display = 'block';
@@ -1539,6 +1541,7 @@ function hideDynamicShape()
 {
 	 //$( "div" ).remove(".container");
 	document.getElementById('room_percentage').style.display = 'none';
+	document.getElementById('room_percentage_two').style.display = 'none';
 	if(layer != null)
 {
 	layer.remove();
